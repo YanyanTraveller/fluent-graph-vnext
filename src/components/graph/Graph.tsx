@@ -14,7 +14,7 @@ import {
   IGraphProps,
   IGraphPropsNode
 } from "./Graph.types";
-import { NodeMap } from "./NodeMap";
+import { NodeMap,DELIMITER_SYMBOL } from "./NodeMap";
 import { LinkMatrix } from "./LinkMatrix";
 import { throttle } from "lodash";
 import { mergeConfig } from "../../utils";
