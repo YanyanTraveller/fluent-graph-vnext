@@ -14,7 +14,7 @@ import {
   IGraphProps,
   IGraphPropsNode
 } from "./Graph.types";
-import { NodeMap,DELIMITER_SYMBOL } from "./NodeMap";
+import { NodeMap } from "./NodeMap";
 import { LinkMatrix } from "./LinkMatrix";
 import { throttle } from "lodash";
 import { mergeConfig } from "../../utils";
@@ -248,7 +248,7 @@ export const Graph: FC<IGraphProps> = (props: IGraphProps) => {
   // Zoom: setup zoom/pan and update behavior ref
   useEffect(() => {
     const zoomSelection: Selection = d3.select(`#${graphContainerId}`);
-    zoomSelection.call(zoomRef.current);
+    zoomSelection.call(zoomRef.current).on("wheel.zoom",null);
     const behavior = getGraphBehavior(props.behaviorRef);
     behavior?.setupZoomBehavior(zoomSelection, zoomRef);
   }, [graphContainerId, props.behaviorRef]);
